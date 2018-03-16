@@ -4,9 +4,13 @@
         "flowtype"
     ],
     "extends": [
-        "plugin:flowtype/recommended"
+        "plugin:flowtype/recommended",
+        "airbnb-base"
     ],
     "env": {
         "jest": true
+    },
+    "rules": {
+        "indent": ["error", 4]    
     }
 }

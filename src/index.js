@@ -19,7 +19,7 @@ class Maybe<T> {
         return false;
     }
 
-    map<A, B>(func: (value: T) => B): Maybe<B | null> {
+    map<A>(func: (value: T) => A): Maybe<A | null> {
         if (this.isNothing()) {
             return Maybe.of(null);
         }
@@ -27,7 +27,7 @@ class Maybe<T> {
         return Maybe.of(func(this.value));
     }
 
-    flatten(): Maybe<T> {
+    get(): Maybe<T> {
         if (this.value instanceof Maybe) {
             return this.value;
         }
@@ -35,9 +35,21 @@ class Maybe<T> {
         return this;
     }
 
-    // Should this be recursive?
-    flatMap<A, B>(func: (value: T) => B): Maybe<B | null> {
-        return this.map(func).flatten();
+    // Unwrap nested maybe's recursively
+    flatMap<A>(func: (value: T) => A): Maybe<A | null> {
+        const innerFlatMapR = (fn, maybe) => {
+            if (!maybe) {
+                return innerFlatMapR(fn, this.map(fn));
+            }
+
+            if (!(maybe.value instanceof Maybe)) {
+                return maybe.get();
+            }
+
+            return innerFlatMapR(fn, maybe.value);
+        };
+
+        return innerFlatMapR(func);
     }
 
     orElse(defaultProp: T): Maybe<T> {
@@ -46,6 +58,12 @@ class Maybe<T> {
         }
 
         return this;
+    }
+
+    bind(func) {
+        return function (maybe) {
+            return maybe.map(func);
+        };
     }
 
     ap(maybe: Maybe<T>): Maybe<?T> {

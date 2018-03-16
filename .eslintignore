@@ -2,7 +2,7 @@
 **/tests/mock-data/**
 */core/utils/dev/**
 env/**
-build/**
+lib/**
 coverage/**
 **/*.config.*
 flow-typed/**
