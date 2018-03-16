@@ -60,10 +60,9 @@ class Maybe<T> {
         return this;
     }
 
-    bind(func) {
-        return function (maybe) {
-            return maybe.map(func);
-        };
+    // eslint-disable-next-line class-methods-use-this
+    bind<A>(func: (value: T) => A) {
+        return (maybe: Maybe<T>) => maybe.map(func);
     }
 
     ap(maybe: Maybe<T>): Maybe<?T> {

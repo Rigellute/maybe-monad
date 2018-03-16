@@ -2,7 +2,7 @@ Arguments:
   /Users/alexander.keliris/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js lint
 
 PATH: 
-  /Users/alexander.keliris/.nvm/versions/node/v9.4.0/bin:/usr/local/bin:/Users/alexander.keliris/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/alexander.keliris/Library/Android/sdk/tools:/Users/alexander.keliris/Library/Android/sdk/platform-tools
+  /usr/local/Cellar/git/2.16.2/libexec/git-core:/Users/alexander.keliris/.nvm/versions/node/v9.4.0/bin:/usr/local/bin:/Users/alexander.keliris/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/alexander.keliris/Library/Android/sdk/tools:/Users/alexander.keliris/Library/Android/sdk/platform-tools
 
 Yarn version: 
   1.5.1
