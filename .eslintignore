@@ -1,0 +1,9 @@
+*-compiled.js*
+**/tests/mock-data/**
+*/core/utils/dev/**
+env/**
+build/**
+coverage/**
+**/*.config.*
+flow-typed/**
+type-defs/**

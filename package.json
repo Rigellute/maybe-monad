@@ -1,0 +1,35 @@
+{
+  "name": "maybe-monad",
+  "version": "1.0.0",
+  "description": "Javascript implementation of the Maybe Monad",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-node8": "^1.2.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.9.0",
+    "flow-bin": "^0.67.1",
+    "jest": "^23.0.0-alpha.0",
+    "prettier": "1.11.1",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "scripts": {
+    "build": "babel src/ -d lib/ --presets node8",
+    "prepublish": "yarn run build",
+    "babel-watch": "yarn build -w",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,__{tests,mocks}__}/**/*.js\" --tab-width 4",
+    "test": "jest",
+    "flow-type": "yarn flow-typed install",
+    "lint": "yarn eslint ."
+  },
+  "dependencies": {
+    "flow-typed": "^2.3.0"
+  }
+}
